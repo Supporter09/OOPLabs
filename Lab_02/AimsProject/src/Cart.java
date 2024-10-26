@@ -2,8 +2,7 @@ public class Cart {
 	private int qtyOrdered = 0;
 	public static final int MAX_ORDERED = 20;
 	private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_ORDERED];
-	
-	
+
 	public void addDigitalVideoDisc (DigitalVideoDisc disc) {
 		if (qtyOrdered == MAX_ORDERED) {
 			System.out.println("Reached max number ordered");
@@ -13,7 +12,7 @@ public class Cart {
 			qtyOrdered += 1;
 			System.out.println("Added");
 		}
-	
+
 	}
 	public void removeDigitalVideoDisc (DigitalVideoDisc disc) {
 		for (int i = 0; i < qtyOrdered; i++) {
@@ -29,15 +28,15 @@ public class Cart {
 		}
 		System.out.println("Cannot find the disc");
 	}
-	
+
 	public float totalCost() {
 		float totalCost = 0;
 		for (int i = 0; i < qtyOrdered; i++) {
 			totalCost += itemsOrdered[i].getCost();
-		}	
+		}
 		return totalCost;
 	}
-	
+
 	public String[] getItemsOrdered() {
 		String[] listOrdered = new String[qtyOrdered];
 		for (int i = 0; i< qtyOrdered; i++) {
