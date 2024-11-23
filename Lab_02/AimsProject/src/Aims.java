@@ -17,10 +17,21 @@ public class Aims {
 		DigitalVideoDisc alt4 = new DigitalVideoDisc("The Avengers",
 				"Action", 24.99f);
 
-		minhOrder.addDigitalVideoDisc(alt1);
-		minhOrder.addDigitalVideoDisc(alt2);
-		minhOrder.addDigitalVideoDisc(alt3);
-		minhOrder.addDigitalVideoDisc(alt4);
+		// minhOrder.addDigitalVideoDisc(alt1);
+		// minhOrder.addDigitalVideoDisc(alt2);
+		// minhOrder.addDigitalVideoDisc(alt3);
+
+		// Add a list of DVD
+		DigitalVideoDisc[] dvdLList = new DigitalVideoDisc[3];
+		dvdLList[0] = alt1;
+		dvdLList[1] = alt2;
+		dvdLList[2] = alt3;
+		minhOrder.addDigitalVideoDisc(dvdLList);
+
+		// Add 2 dvd
+		minhOrder.addDigitalVideoDisc(alt3, alt4);
+
+		minhOrder.printOrders();
 
 		System.out.println("Total cost is: ");
 		System.out.println(minhOrder.totalCost());
