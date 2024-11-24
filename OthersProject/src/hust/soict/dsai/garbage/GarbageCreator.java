@@ -5,7 +5,6 @@ import java.nio.file.*;
 
 public class GarbageCreator {
     public static void main(String[] args) {
-        // Specify a large file path - you can use any large text file
         String filePath = "large_file.txt";
 
         try {
