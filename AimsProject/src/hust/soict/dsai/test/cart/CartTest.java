@@ -22,5 +22,12 @@ public class CartTest {
         
         //Test the print method
         cart.printOrders();
+        
+        //Test the search method
+        cart.searchByTitle("Aladin");
+        cart.searchByTitle("Ball");
+        
+        cart.searchById(1);
+        cart.searchById(10);
     }
 }
