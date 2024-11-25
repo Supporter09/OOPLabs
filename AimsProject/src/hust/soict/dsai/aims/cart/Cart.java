@@ -6,6 +6,7 @@ public class Cart {
 	private int qtyOrdered = 0;
 	public static final int MAX_ORDERED = 20;
 	private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_ORDERED];
+	private int total;
 
 	public void addDigitalVideoDisc (DigitalVideoDisc disc) {
 		if (qtyOrdered == MAX_ORDERED) {
@@ -45,10 +46,15 @@ public class Cart {
 		}
 	}
 
-	public void printOrders() {
+	public void print() {
+		total = 0;
+		System.out.println("*************************[CART]*************************");
+		System.out.println("Ordered Items:");
 		for (int i = 0; i < qtyOrdered; i++) {
-			System.out.println(itemsOrdered[i].toString());
+			System.out.println((i + 1) + ". DVD - " + itemsOrdered[i].toString());
 		}
+		System.out.println("Total cost: " + totalCost());
+		System.out.println("*********************************************************");
 	}
 
 	public void searchById(int id) {

@@ -1,9 +1,8 @@
 package hust.soict.dsai.aims;
 
-import java.util.Arrays;
-
 import hust.soict.dsai.aims.cart.Cart;
 import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import java.util.Arrays;
 
 public class Aims {
 	public static void main(String[] args) {
@@ -36,7 +35,7 @@ public class Aims {
 		// Add 2 dvd
 		minhOrder.addDigitalVideoDisc(alt3, alt4);
 
-		minhOrder.printOrders();
+		minhOrder.print();
 
 		System.out.println("Total cost is: ");
 		System.out.println(minhOrder.totalCost());
