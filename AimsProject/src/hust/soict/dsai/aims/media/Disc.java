@@ -3,7 +3,7 @@ package hust.soict.dsai.aims.media;
 public class Disc extends Media {
 	private int length;
 	private String director;
-	
+
 	public Disc() {
 		this.length = 0;
 		this.director = "";
@@ -22,4 +22,8 @@ public class Disc extends Media {
 		return director;
 	}
 
+	@Override
+	public String toString() {
+		return "Disc" + "-" + this.getTitle() + "-" + this.getCategory() + "-" + this.getDirector() + "-" + String.valueOf(this.getLength()) + ": " + String.valueOf(this.getCost()) + "$";
+	};
 }

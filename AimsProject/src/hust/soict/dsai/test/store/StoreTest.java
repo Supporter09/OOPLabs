@@ -14,13 +14,13 @@ public class StoreTest {
 
         // Test adding DVDs
         System.out.println("Testing addDVD method:");
-        store.addDvd(dvd1);
-        store.addDvd(dvd2);
-        store.addDvd(null);
+        store.addMedia(dvd1);
+        store.addMedia(dvd2);
+        store.addMedia(null);
 
-        // Test removing DVDs
+        // // Test removing DVDs
         System.out.println("\nTesting removeDVD method:");
-        store.removeDvd(dvd2);
-        store.removeDvd(dvd3);
+        store.removeMedia(dvd2);
+        store.removeMedia(dvd3);
     }
 }

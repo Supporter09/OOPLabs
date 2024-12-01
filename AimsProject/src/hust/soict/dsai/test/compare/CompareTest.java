@@ -1,19 +1,17 @@
-package hust.soict.dsai.test.polymorphism;
+package hust.soict.dsai.test.compare;
 
+import hust.soict.dsai.aims.cart.Cart;
 import hust.soict.dsai.aims.media.Book;
 import hust.soict.dsai.aims.media.CompactDisc;
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
-import hust.soict.dsai.aims.media.Media;
-import java.util.ArrayList;
 
-public class Polymorphism {
-
-	public static void main(String[] args) {
-		ArrayList<Media> mediae = new ArrayList<Media>();
+public class CompareTest {
+    public static void main(String[] args) {
+        Cart cart = new Cart();
 
 		// create some media here
 		// for example: cd, dvd, book
-		CompactDisc cd1 = new CompactDisc("Son Tung MTP");
+		CompactDisc cd1 = new CompactDisc("Son Tung MTP", "Album Special", "Classic", "Son Tung MTP", 24.55f);
 		CompactDisc cd2 = new CompactDisc("Amee");
 
 		DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King",
@@ -25,16 +23,19 @@ public class Polymorphism {
 		Book b1 = new Book("1 Van Cau Hoi Vi sao", "Truyen", 80.25f);
 		Book b2 = new Book("So Dua", "Truyen Co Tich", 40.5f);
 
-		mediae.add(cd1);
-		mediae.add(cd2);
-		mediae.add(dvd1);
-		mediae.add(dvd2);
-		mediae.add(b1);
-		mediae.add(b2);
+		cart.addMedia(cd1);
+		cart.addMedia(cd2);
+		cart.addMedia(dvd1);
+		cart.addMedia(dvd2);
+		cart.addMedia(b1);
+		cart.addMedia(b2);
 
-		for (Media media : mediae) {
-			System.out.println(media.toString());
-		}
-	}
+        // Sort by Title, then Cost
+        cart.sortByTitleCost();
 
+        System.out.println("");
+
+        // Sort by Cost, then Title
+        cart.sortByCostTitle();
+    }
 }

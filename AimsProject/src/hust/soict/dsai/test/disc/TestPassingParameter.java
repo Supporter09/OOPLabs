@@ -27,13 +27,13 @@ public class TestPassingParameter {
     // Using a wrapper class to hold the references
     public static void trueSwap(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
         String tempTitle = dvd1.getTitle();
-        dvd1.setTitle(dvd2.getTitle());
-        dvd2.setTitle(tempTitle);
+        // dvd1.setTitle(dvd2.getTitle());
+        // dvd2.setTitle(tempTitle);
     }
 
     public static void changeTitle(DigitalVideoDisc dvd, String title) {
         String oldTitle = dvd.getTitle();
-        dvd.setTitle(title);
-        dvd = new DigitalVideoDisc(oldTitle);
+        // dvd.setTitle(title);
+        // dvd = new DigitalVideoDisc(oldTitle);
     }
 }
