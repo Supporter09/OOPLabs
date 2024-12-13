@@ -11,6 +11,10 @@ public class Store {
         itemsInStore = new ArrayList<Media>();
     }
 
+	public ArrayList<Media> getItemsInStore() {
+		return itemsInStore;
+	}
+
     public void displayItems() {
 		for (Media item: itemsInStore) {
 			System.out.println(item.toString());
