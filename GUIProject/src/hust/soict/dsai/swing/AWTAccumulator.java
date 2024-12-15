@@ -39,11 +39,10 @@ public class AWTAccumulator extends Frame {
 		Frame frame = new AWTAccumulator();
 		frame.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
+                // Perform any necessary cleanup tasks here
                 System.exit(0); // Terminate the application
             }
-        });
-		
-		 
+        }); 
 	}
 	
 	private class TFInputListener implements ActionListener {

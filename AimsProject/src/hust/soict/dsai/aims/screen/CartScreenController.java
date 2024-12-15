@@ -85,10 +85,14 @@ public class CartScreenController {
     }
     
     void showFilterMedia(String searchString) {
-    	if(radioBtnFilterId.isSelected()) {
-    		tblMedia.setItems(new FilteredList<Media>(this.cart.getItemsOrdered(),item-> item.getId()==Integer.parseInt(searchString)));
-    	}else
-    	tblMedia.setItems(new FilteredList<Media>(this.cart.getItemsOrdered(),item-> item.getTitle().contains(searchString)));
+    	if(searchString.isEmpty()) {
+    		tblMedia.setItems(this.cart.getItemsOrdered());
+    	} else {
+        	if(radioBtnFilterId.isSelected()) {
+        		tblMedia.setItems(new FilteredList<Media>(this.cart.getItemsOrdered(),item-> item.getId()==Integer.parseInt(searchString)));
+        	}else
+        	tblMedia.setItems(new FilteredList<Media>(this.cart.getItemsOrdered(),item-> item.getTitle().contains(searchString)));
+    	}
     }
     
     @FXML
@@ -102,7 +106,7 @@ public class CartScreenController {
     			new PropertyValueFactory<Media, Float>("cost"));
     	
     	tblMedia.setItems(this.cart.getItemsOrdered());
-    	totalCost.setText(this.cart.totalCost()+"$");
+    	totalCost.setText(cart.totalCost()+"$");
     	btnPlay.setVisible(false);
     	btnRemove.setVisible(false);
     	playingMedia.setVisible(false);
@@ -110,8 +114,7 @@ public class CartScreenController {
     	tfFilter.textProperty().addListener(new ChangeListener<String>() {
 			
 			@Override
-			public void changed(ObservableValue<? extends String> observable, String oldValue,
-					String newValue) {
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 				
 				showFilterMedia(newValue);
 			}
@@ -161,6 +164,9 @@ public class CartScreenController {
     	PauseTransition pt = new PauseTransition(Duration.seconds(1));
         pt.setOnFinished(e ->{
         	btnOrder.setDisable(false);
+        	
+        	playingMedia.setVisible(false);
+        	btnPlay.setVisible(false);
         	btnOrder.setText("Order");
         } );
         pt.playFromStart();

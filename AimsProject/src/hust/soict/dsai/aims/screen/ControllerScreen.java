@@ -21,19 +21,22 @@ public class ControllerScreen {
 		store=new Store();
 		addDVDScreen= new AddDigitalVideoDiscToStoreScreen(store, cart, this);
 		addDVDScreen.setTitle("Add DVD");
+		
 		addBookScreen= new AddBookToStoreScreen(store, cart, this);
 		addBookScreen.setTitle("Add Book");
+		
 		addCDScreen= new AddCompactDiscToStoreScreen(store, cart, this);
 		addCDScreen.setTitle("Add CD");
-		storeSreen= new StoreScreen(store, cart, this);
-		cartSceen= new CartScreen(cart,this);
+		
+		storeSreen= new StoreScreen(store, cart, this);	
+		cartSceen= new CartScreen(cart, this);
+		
 		showStoreScreen();
-//		showAddDVDScreen();
 	}
 	public static void main(String args[]) {
 		new ControllerScreen();
 	}
-//	
+
 	public void updateAddItem() {
 	}
 	public void showStoreScreen() {

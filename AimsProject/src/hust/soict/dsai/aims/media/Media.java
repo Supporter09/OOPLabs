@@ -43,14 +43,17 @@ public abstract class Media implements Comparable<Media> {
 	}
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null || !(obj instanceof Media)) {
-            return false;
-        }
-
-        Media other = (Media) obj;
-        return this.title != null && this.title.equals(other.title);
-    }
+	public boolean equals(Object o) {
+		if (o instanceof Media) {
+			Media media = (Media) o;
+			if (this.title.equals(media.title)) {
+				return true;
+			}else {
+				return false;
+			}
+		}
+		return false;
+	}
 
 	@Override
 	public abstract String toString();

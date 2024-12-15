@@ -23,12 +23,12 @@ public class CompareTest {
 		Book b1 = new Book("1 Van Cau Hoi Vi sao", "Truyen", 80.25f);
 		Book b2 = new Book("So Dua", "Truyen Co Tich", 40.5f);
 
-		cart.addMedia(cd1);
-		cart.addMedia(cd2);
-		cart.addMedia(dvd1);
-		cart.addMedia(dvd2);
-		cart.addMedia(b1);
-		cart.addMedia(b2);
+//		cart.addMedia(cd1);
+//		cart.addMedia(cd2);
+//		cart.addMedia(dvd1);
+//		cart.addMedia(dvd2);
+//		cart.addMedia(b1);
+//		cart.addMedia(b2);
 
         // Sort by Title, then Cost
         cart.sortByTitleCost();

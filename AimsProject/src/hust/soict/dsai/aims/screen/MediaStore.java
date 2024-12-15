@@ -63,15 +63,25 @@ public class MediaStore extends JPanel {
 					JDialog playDialog = new JDialog();
 					JPanel mainGui = new JPanel(new BorderLayout());
 			        mainGui.setBorder(new EmptyBorder(20, 20, 20, 20));
-			        mainGui.add(new JLabel("Playing....."), BorderLayout.CENTER);
+			        
+			        // Display Playing Message
+			        mainGui.add(new JLabel("Playing... " + media.getTitle()), BorderLayout.CENTER);
+			        System.out.println(media.getTitle());
+			        // Close Button
 			        JPanel buttonPanel = new JPanel(new FlowLayout());
-			        mainGui.add(buttonPanel, BorderLayout.SOUTH);
-			        JButton close = new JButton("Stop");
-			        close.addActionListener(ev->playDialog.setVisible(false));
-			        buttonPanel.add(close);
+                    JButton close = new JButton("Stop");
+                    close.addActionListener(ev -> {
+                        playDialog.setVisible(false);
+                        System.out.println("Stopped playing.");
+                    });
+                    buttonPanel.add(close);
+                    mainGui.add(buttonPanel, BorderLayout.SOUTH);
+                    
 			        playDialog.setContentPane(mainGui);
 			        playDialog.setLocationRelativeTo(playBtn);
 			        playDialog.pack();
+			        
+			        // Show Dialog
 			        playDialog.setVisible(true);
 				}
 			});
