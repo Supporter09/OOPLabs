@@ -54,30 +54,30 @@ public class StoreScreen extends JFrame {
 			c.showStoreScreen();
 		});
 		menu.add(viewStoreMenu);
-		
+
 		JMenuItem viewCartMenu= new JMenuItem("View cart");
 		viewCartMenu.addActionListener(e->{
 			c.showCartScreen();
 		});
 		menu.add(viewCartMenu);
-		
+
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setLayout(new FlowLayout(FlowLayout.LEFT));
 		menuBar.add(menu);
-		
+
 		return menuBar;
 	}
-	
+
 	JPanel createHeader() {
 		JPanel header = new JPanel();
 		header.setLayout(new BoxLayout(header, BoxLayout.X_AXIS));
-		
+
 		JLabel title = new JLabel("AIMS");
 		title.setFont(new Font(title.getFont().getName(), Font.PLAIN, 50));
 		title.setForeground(Color.CYAN);
-		
+
 		JButton btnCart = new JButton("View cart");
-		
+
 		btnCart.setPreferredSize(new Dimension(100, 50));
 		btnCart.setMaximumSize(new Dimension(100, 50));
 		btnCart.addActionListener(new ActionListener() {
@@ -86,17 +86,17 @@ public class StoreScreen extends JFrame {
 					c.showCartScreen();
 				}
 		});
-		
-		
+
+
 		header.add(Box.createRigidArea(new Dimension(10, 10)));
 		header.add(title);
 		header.add(Box.createHorizontalGlue());
 		header.add(btnCart);
 		header.add(Box.createRigidArea(new Dimension(10, 10)));
-		
+
 		return header;
 	}
-	
+
 	JPanel createNorth() {
 		JPanel north = new JPanel();
 		north.setLayout(new BoxLayout(north, BoxLayout.Y_AXIS));
@@ -104,37 +104,37 @@ public class StoreScreen extends JFrame {
 		north.add(createHeader());
 		return north;
 	}
-	
+
 	JPanel createCenter() {
-		
+
 		JPanel center = new JPanel();
 		center.setLayout(new GridLayout(3, 3, 2, 2));
-		
+
 		ArrayList<Media> mediaInStore = store.getItemsInStore();
 		for (int i=0; i< mediaInStore.size(); i++) {
 			MediaStore cell = new MediaStore(mediaInStore.get(i), cart);
 			center.add(cell);
 		}
-		
+
 		return center;
 	}
-	
+
 	public StoreScreen(Store store, Cart cart,ControllerScreen c) {
 		this.store = store;
 		this.cart = cart;
 		this.c=c;
 		Container cp = getContentPane();
 		cp.setLayout(new BorderLayout());
-		
+
 		cp.add(createNorth(), BorderLayout.NORTH);
 		cp.add(createCenter(), BorderLayout.CENTER);
-		
-		setVisible(true);
+
+//		setVisible(true);
 		setTitle("Store");
 		setSize(1024, 768);
-		
+
 	}
-	
+
 	public static void main(String[] args) {
 	}
 
